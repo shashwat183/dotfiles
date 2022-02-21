@@ -5,11 +5,16 @@ MYSQL_HOME=/usr/local/mysql
 POSTGRES13=/Applications/Postgres.app/Contents/Versions/13/bin/
 
 PATH=$PATH:$GOPATH/bin:$M2_HOME/bin:$MYSQL_HOME/bin:$POSTGRES13:/Users/shashwatpragya/Scripts:/Users/shashwatpragya/Tools
+PATH=/usr/local/opt/openjdk/bin:$PATH
 
 export PATH
 export GOPATH
 export M2_HOME
 export MYSQL_HOME
+
+# For compilers to find openjdk
+export CPPFLAGS="-I/usr/local/opt/openjdk/include"
+
 
 
 # The next line updates PATH for the Google Cloud SDK.
