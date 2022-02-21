@@ -9,6 +9,7 @@
     ~/.zshrc: zshrc
     ~/.zprofile: zprofile
     ~/.gitconfig: gitconfig
+    ~/.global_gitignore: global_gitignore 
 
 - create:
     - ~/downloads

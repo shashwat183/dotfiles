@@ -3,3 +3,4 @@
 	email = shashwat183@gmail.com
 [core]
 	autocrlf = input
+	excludesfile = /Users/shashwatpragya/.global_gitignore
