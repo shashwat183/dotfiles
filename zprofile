@@ -24,3 +24,4 @@ if [ -f '/Users/shashwatpragya/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/
 if [ -f '/Users/shashwatpragya/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/shashwatpragya/google-cloud-sdk/completion.zsh.inc'; fi
 
 alias commit-history="git log --pretty=oneline"
+alias get-dns-server-ip="host -a www.google.com | grep from"

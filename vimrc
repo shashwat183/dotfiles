@@ -43,31 +43,26 @@ Plugin 'gmarik/Vundle.vim'
 
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'neoclide/coc.nvim'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'nvie/vim-flake8'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'dracula/vim', { 'name': 'dracula' }
-
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'morhetz/gruvbox'
+Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 " ...
 
 " All of your Plugins must be added before the following line
 call vundle#end()		" required
 filetype plugin indent on	" required
 
-" --- YCM global settings ---
-
-" Close auto complete window when done using it
-let g:ycm_autoclose_preview_window_after_completion=1
-
-" shortcut for goto definition
-let mapleader =" "
-map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " syntastic settings
 let python_highlight_all=1
@@ -77,6 +72,7 @@ let g:syntastic_aggregate_errors = 1
 
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 colorscheme dracula
+set background=dark
 let g:airline_theme='dracula'
 let g:airline_powerline_fonts = 1
 let g:Powerline_symbols = 'fancy'
@@ -84,9 +80,20 @@ let g:Powerline_symbols = 'fancy'
 "--------------------------------------------------------------------------------------------------------------"
 " Key Maps
 "--------------------------------------------------------------------------------------------------------------"
+" Leader mapped to <SPACE>
+let mapleader =" "
 
 " split navigations
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" shortcut for goto definition
+nmap <leader>gd <Plug>(coc-definition)
+nmap <leader>gy <Plug>(coc-type-definition)
+nmap <leader>gi <Plug>(coc-implementation)
+nmap <leader>gr <Plug>(coc-references)
+
+" TODO Add Mapping to create a new directory using NERDTree
+" TODO Add Mapping to move(rename) a directory using NERDTree
