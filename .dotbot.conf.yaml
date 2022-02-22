@@ -10,6 +10,14 @@
     ~/.zprofile: zprofile
     ~/.gitconfig: gitconfig
     ~/.global_gitignore: global_gitignore 
+    ~/.tmux.conf: tmux.conf
+    ~/.vim/ftplugin/css.vim: vim/ftplugin/css.vim
+    ~/.vim/ftplugin/java.vim: vim/ftplugin/java.vim
+    ~/.vim/ftplugin/python.vim: vim/ftplugin/python.vim
+    ~/.vim/ftplugin/javascript.vim: vim/ftplugin/javascript.vim
+    ~/.vim/ftplugin/c.vim: vim/ftplugin/c.vim
+    ~/.vim/ftplugin/vim.vim: vim/ftplugin/vim.vim
+    ~/.vim/ftplugin/html.vim: vim/ftplugin/html.vim
 
 - create:
     - ~/downloads

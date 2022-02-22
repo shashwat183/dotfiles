@@ -1,0 +1,1 @@
+match BadWhitespace /\s\+$/

@@ -44,7 +44,6 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'neoclide/coc.nvim'
-Plugin 'vim-syntastic/syntastic'
 Plugin 'nvie/vim-flake8'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
@@ -57,6 +56,7 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'morhetz/gruvbox'
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+
 " ...
 
 " All of your Plugins must be added before the following line
@@ -77,6 +77,13 @@ let g:airline_theme='dracula'
 let g:airline_powerline_fonts = 1
 let g:Powerline_symbols = 'fancy'
 
+" Remove >> << symbols from lh refactor autgenerate
+let b:usemarks=0
+let g:use_old_bracketting_macros=1
+let g:marker_define_jump_mappings=1
+
+let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+
 "--------------------------------------------------------------------------------------------------------------"
 " Key Maps
 "--------------------------------------------------------------------------------------------------------------"
@@ -84,16 +91,20 @@ let g:Powerline_symbols = 'fancy'
 let mapleader =" "
 
 " split navigations
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+nnoremap <leader><C-J> <C-W><C-J>
+nnoremap <leader><C-K> <C-W><C-K>
+nnoremap <leader><<C-L> <C-W><C-L>
+nnoremap <leader><<C-H> <C-W><C-H>
 
 " shortcut for goto definition
 nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gy <Plug>(coc-type-definition)
 nmap <leader>gi <Plug>(coc-implementation)
 nmap <leader>gr <Plug>(coc-references)
+
+" New line without entering insert mode
+nnoremap <Leader>o o<Esc>0"_D
+nnoremap <Leader>O O<Esc>0"_D
 
 " TODO Add Mapping to create a new directory using NERDTree
 " TODO Add Mapping to move(rename) a directory using NERDTree
