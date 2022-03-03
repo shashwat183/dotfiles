@@ -2,6 +2,8 @@
 " General Settings
 "--------------------------------------------------------------------------------------------------------------"
 
+set noswapfile		" dont create swap files
+set noerrorbells	" no sound effects in vim cause they are uber annoying
 set number 		" set line numbers
 set nocompatible	" required
 set backspace=2		" delete in insert mode deletes characters
@@ -23,6 +25,8 @@ highlight BadWhitespace ctermbg=red guibg=darkred
 " Set utf-8 encoding
 set encoding=utf-8
 
+set colorcolumn=80
+highlight ColorColumn ctermbg=0 guibg=lightgrey
 "--------------------------------------------------------------------------------------------------------------"
 " Vundle
 "--------------------------------------------------------------------------------------------------------------"
@@ -56,7 +60,8 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'morhetz/gruvbox'
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
-
+Plugin 'skywind3000/asyncrun.vim'
+Plugin 'conornewton/vim-pandoc-markdown-preview'
 " ...
 
 " All of your Plugins must be added before the following line
@@ -82,6 +87,7 @@ let b:usemarks=0
 let g:use_old_bracketting_macros=1
 let g:marker_define_jump_mappings=1
 
+let g:md_pdf_viewer="evince"
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
 "--------------------------------------------------------------------------------------------------------------"
