@@ -7,4 +7,5 @@ setlocal autoindent
 setlocal fileformat=unix
 setlocal encoding=utf-8
 
-match badwhitespace /\s\+$/
+nnoremap <leader>/ I# <Esc>
+

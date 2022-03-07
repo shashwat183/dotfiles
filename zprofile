@@ -25,3 +25,7 @@ if [ -f '/Users/shashwatpragya/google-cloud-sdk/completion.zsh.inc' ]; then . '/
 
 alias commit-history="git log --pretty=oneline"
 alias get-dns-server-ip="host -a www.google.com | grep from"
+alias cn="clear && neofetch"
+alias lvim="/Users/shashwatpragya/.local/bin/lvim"
+
+neofetch

@@ -8,19 +8,23 @@ set number 		" set line numbers
 set nocompatible	" required
 set backspace=2		" delete in insert mode deletes characters
 syntax on
-set hidden		" dont have to save when switching file buffer   
-imap jj <ESC>  
+set hidden		" dont have to save when switching file buffer
+imap jj <ESC>
 
 " where splits occur when using sp and vs
 set splitbelow
 set splitright
 
+" Give more space for displaying messages.
+set cmdheight=2
+
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=300
+
 " Enable folding(collapse a section of code like a method or class)
 set foldmethod=indent
 set foldlevel=99
-
-"Flagging Unnecessary Whitespace
-highlight BadWhitespace ctermbg=red guibg=darkred
 
 " Set utf-8 encoding
 set encoding=utf-8
@@ -62,6 +66,11 @@ Plugin 'morhetz/gruvbox'
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plugin 'skywind3000/asyncrun.vim'
 Plugin 'conornewton/vim-pandoc-markdown-preview'
+Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'lifepillar/vim-gruvbox8'
+Plugin 'bling/vim-bufferline'
+Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plugin 'junegunn/fzf.vim'
 " ...
 
 " All of your Plugins must be added before the following line
@@ -76,16 +85,25 @@ let g:syntastic_aggregate_errors = 1
 " set t_Co=256
 
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
-colorscheme dracula
+colorscheme gruvbox8
 set background=dark
-let g:airline_theme='dracula'
+let g:airline_theme='gruvbox8'
 let g:airline_powerline_fonts = 1
 let g:Powerline_symbols = 'fancy'
+let g:airline#extensions#bufferline#enabled = 1
+
+" Show formatoption next to filetype in airline statusline
+function Fo()
+	return &fo
+endfunction
+call airline#parts#define_function('format_option', 'Fo')
+let g:airline_section_x= airline#section#create_right(['format_option', 'filetype'])
+
 
 " Remove >> << symbols from lh refactor autgenerate
-let b:usemarks=0
-let g:use_old_bracketting_macros=1
-let g:marker_define_jump_mappings=1
+" let b:usemarks=0
+" let g:use_old_bracketting_macros=1
+" let g:marker_define_jump_mappings=1
 
 let g:md_pdf_viewer="evince"
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
@@ -96,11 +114,31 @@ let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 " Leader mapped to <SPACE>
 let mapleader =" "
 
+" Hard Mode Key Mapping -- Disable arrow keys in all modes
+nnoremap <Left> <Nop>
+nnoremap <Right> <Nop>
+nnoremap <Up> <Nop>
+nnoremap <Down> <Nop>
+nnoremap <PageUp> <Nop>
+nnoremap <PageDown> <Nop>
+inoremap <Left> <Nop>
+inoremap <Right> <Nop>
+inoremap <Up> <Nop>
+inoremap <Down> <Nop>
+inoremap <PageUp> <Nop>
+inoremap <PageDown> <Nop>
+vnoremap <Left> <Nop>
+vnoremap <Right> <Nop>
+vnoremap <Up> <Nop>
+vnoremap <Down> <Nop>
+vnoremap <PageUp> <Nop>
+vnoremap <PageDown> <Nop>
+
 " split navigations
-nnoremap <leader><C-J> <C-W><C-J>
-nnoremap <leader><C-K> <C-W><C-K>
-nnoremap <leader><<C-L> <C-W><C-L>
-nnoremap <leader><<C-H> <C-W><C-H>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 
 " shortcut for goto definition
 nmap <leader>gd <Plug>(coc-definition)
@@ -112,5 +150,18 @@ nmap <leader>gr <Plug>(coc-references)
 nnoremap <Leader>o o<Esc>0"_D
 nnoremap <Leader>O O<Esc>0"_D
 
+" Coc.vim mappings
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+
 " TODO Add Mapping to create a new directory using NERDTree
 " TODO Add Mapping to move(rename) a directory using NERDTree
+" Open NERDTree Explorer on left
+nnoremap <Leader>e :NERDTree<CR>
+
+" Buffer Navigation
+nnoremap L :bn<CR>
+nnoremap H :bp<CR>
+
+" FZF Key Binding
+nnoremap <Leader>f :Files<CR>

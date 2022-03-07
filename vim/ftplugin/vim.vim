@@ -1,1 +1,1 @@
-match BadWhitespace /\s\+$/
+nnoremap <leader>/ I" <Esc>
