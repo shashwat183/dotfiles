@@ -1,6 +1,6 @@
-"--------------------------------------------------------------------------------------------------------------"
+"------------------------------------------------------------------------------
 " General Settings
-"--------------------------------------------------------------------------------------------------------------"
+"------------------------------------------------------------------------------
 
 set noswapfile		" dont create swap files
 set noerrorbells	" no sound effects in vim cause they are uber annoying
@@ -31,13 +31,14 @@ set encoding=utf-8
 
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
-"--------------------------------------------------------------------------------------------------------------"
+"------------------------------------------------------------------------------
 " Vundle
-"--------------------------------------------------------------------------------------------------------------"
+"------------------------------------------------------------------------------
 
 filetype off		" Required for vundle shorturl.at/cCNS6
 
-" set the runtime path to include vundle and initialize https://medium.com/usevim/vim-101-runtimepath-83194d411b0a
+" set the runtime path to include vundle and initialize
+" https://medium.com/usevim/vim-101-runtimepath-83194d411b0a
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -47,7 +48,8 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-" add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
+" add all your plugins here (note older versions of Vundle 
+" used Bundle instead of Plugin)
 
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
@@ -68,7 +70,7 @@ Plugin 'skywind3000/asyncrun.vim'
 Plugin 'conornewton/vim-pandoc-markdown-preview'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'lifepillar/vim-gruvbox8'
-Plugin 'bling/vim-bufferline'
+Plugin 'easymotion/vim-easymotion'
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
 " ...
@@ -82,7 +84,7 @@ filetype plugin indent on	" required
 let python_highlight_all=1
 let g:syntastic_aggregate_errors = 1
 
-" set t_Co=256
+set t_Co=256
 
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 colorscheme gruvbox8
@@ -90,15 +92,20 @@ set background=dark
 let g:airline_theme='gruvbox8'
 let g:airline_powerline_fonts = 1
 let g:Powerline_symbols = 'fancy'
-let g:airline#extensions#bufferline#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_tab_count = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
 
 " Show formatoption next to filetype in airline statusline
 function Fo()
 	return &fo
 endfunction
-call airline#parts#define_function('format_option', 'Fo')
-let g:airline_section_x= airline#section#create_right(['format_option', 'filetype'])
-
+call airline#parts#define_function('for_o', 'Fo')
+let g:airline_section_x= airline#section#create_right(['for_o', 'filetype'])
+" let g:buffet_powerline_separators = 1
+" let g:buffet_tab_icon = "\uf00a"
+" let g:buffet_left_trunc_icon = "\uf0a8"
+" let g:buffet_right_trunc_icon = "\uf0a9"
 
 " Remove >> << symbols from lh refactor autgenerate
 " let b:usemarks=0
@@ -108,9 +115,9 @@ let g:airline_section_x= airline#section#create_right(['format_option', 'filetyp
 let g:md_pdf_viewer="evince"
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
-"--------------------------------------------------------------------------------------------------------------"
+"------------------------------------------------------------------------------
 " Key Maps
-"--------------------------------------------------------------------------------------------------------------"
+"------------------------------------------------------------------------------
 " Leader mapped to <SPACE>
 let mapleader =" "
 
@@ -153,6 +160,26 @@ nnoremap <Leader>O O<Esc>0"_D
 " Coc.vim mappings
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
+" Format entire file
+command! -nargs=0 Format :call CocActionAsync('format')
+" Formatting selected code.
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+" Autocompletetion using Tab
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" use <tab> for trigger completion and navigate to the next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
 
 " TODO Add Mapping to create a new directory using NERDTree
 " TODO Add Mapping to move(rename) a directory using NERDTree
@@ -162,6 +189,8 @@ nnoremap <Leader>e :NERDTree<CR>
 " Buffer Navigation
 nnoremap L :bn<CR>
 nnoremap H :bp<CR>
+nnoremap <Leader>q :bd<CR>
 
 " FZF Key Binding
 nnoremap <Leader>f :Files<CR>
+

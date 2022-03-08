@@ -1,0 +1,21 @@
+{
+	// General Coc Settings
+	"codeLens.enable": true,
+	"coc.preferences.formatOnType": true,
+	"coc.preferences.formatOnSaveFiletypes": [
+		"python",
+		"java"
+	],
+	// Java
+	"java.referencesCodeLens.enabled": true,
+	//"java.implementationsCodeLens.enabled": true,
+	// Python
+	"python.linting.flake8Enabled": false,
+	"python.linting.pylintEnabled": true,
+	"python.linting.pylamaEnabled": false,
+	"python.linting.enabled": true,
+	"python.formatting.provider": "black",
+	"python.formatting.blackArgs": ["--line-length", "79"],
+	"python.formatting.autopep8Args": ["--aggressive", "--aggressive"]
+
+}
