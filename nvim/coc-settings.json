@@ -14,9 +14,10 @@
 	"java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
 	"java.implementationsCodeLens.enabled": true,
 	"java.format.onType.enabled": true,
+	"java.jdt.ls.vmargs": "-javaagent:/usr/local/share/lombok/lombok.jar",
 	// Python
-	"python.linting.flake8Enabled": false,
-	"python.linting.pylintEnabled": true,
+	"python.linting.flake8Enabled": true,
+	"python.linting.pylintEnabled": false,
 	"python.linting.pylamaEnabled": false,
 	"python.linting.enabled": true,
 	"python.formatting.provider": "black",

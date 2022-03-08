@@ -48,7 +48,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-" add all your plugins here (note older versions of Vundle 
+" add all your plugins here (note older versions of Vundle
 " used Bundle instead of Plugin)
 
 Plugin 'tmhedberg/SimpylFold'
@@ -73,6 +73,9 @@ Plugin 'lifepillar/vim-gruvbox8'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
+Plugin 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plugin 'nvim-lua/plenary.nvim'
+Plugin 'filipdutescu/renamer.nvim', { 'branch': 'master' }
 " ...
 
 " All of your Plugins must be added before the following line
@@ -169,17 +172,19 @@ nmap <leader>f  <Plug>(coc-format-selected)
 " Autocompletetion using Tab
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
+
 
 " use <tab> for trigger completion and navigate to the next complete item
 function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
+	let col = col('.') - 1
+	return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
 
 inoremap <silent><expr> <Tab>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<Tab>" :
-      \ coc#refresh()
+	\ pumvisible() ? "\<C-n>" :
+	\ <SID>check_back_space() ? "\<Tab>" :
+	\ coc#refresh()
 
 " TODO Add Mapping to create a new directory using NERDTree
 " TODO Add Mapping to move(rename) a directory using NERDTree
@@ -194,3 +199,7 @@ nnoremap <Leader>q :bd<CR>
 " FZF Key Binding
 nnoremap <Leader>f :Files<CR>
 
+" Renamer mappings
+inoremap <silent> <F2> <cmd>lua require('renamer').rename()<cr>
+nnoremap <silent> <leader>rn <cmd>lua require('renamer').rename()<cr>
+vnoremap <silent> <leader>rn <cmd>lua require('renamer').rename()<cr>
