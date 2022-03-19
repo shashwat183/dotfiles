@@ -8,6 +8,10 @@
 	],
 	// Java
 	"java.referencesCodeLens.enabled": true,
+	"java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
+	"java.implementationsCodeLens.enabled": true,
+	"java.format.onType.enabled": true,
+	"java.jdt.ls.vmargs": "-javaagent:/usr/local/share/lombok/lombok.jar",
 	//"java.implementationsCodeLens.enabled": true,
 	// Python
 	"python.linting.flake8Enabled": false,

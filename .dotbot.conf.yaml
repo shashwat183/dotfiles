@@ -19,8 +19,7 @@
     ~/.vim/ftplugin/vim.vim: vim/ftplugin/vim.vim
     ~/.vim/ftplugin/html.vim: vim/ftplugin/html.vim
     ~/.vim/coc-settings.json: vim/coc-settings.json
-    ~/.config/nvim/init.vim: nvim/init.vim
-    ~/.config/nvim/coc-settings.json: nvim/coc-settings.json
+    ~/.alacritty.yml: alacritty.yml
 
 - create:
     - ~/downloads
