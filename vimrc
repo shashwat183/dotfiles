@@ -73,9 +73,7 @@ Plugin 'lifepillar/vim-gruvbox8'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
-Plugin 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plugin 'nvim-lua/plenary.nvim'
-Plugin 'filipdutescu/renamer.nvim', { 'branch': 'master' }
+Plugin 'lewis6991/gitsigns.nvim'
 " ...
 
 " All of your Plugins must be added before the following line
@@ -189,7 +187,7 @@ inoremap <silent><expr> <Tab>
 " TODO Add Mapping to create a new directory using NERDTree
 " TODO Add Mapping to move(rename) a directory using NERDTree
 " Open NERDTree Explorer on left
-nnoremap <Leader>e :NERDTree<CR>
+nnoremap <Leader>e :NERDTreeToggle<CR>
 
 " Buffer Navigation
 nnoremap L :bn<CR>
@@ -199,7 +197,3 @@ nnoremap <Leader>q :bd<CR>
 " FZF Key Binding
 nnoremap <Leader>f :Files<CR>
 
-" Renamer mappings
-inoremap <silent> <F2> <cmd>lua require('renamer').rename()<cr>
-nnoremap <silent> <leader>rn <cmd>lua require('renamer').rename()<cr>
-vnoremap <silent> <leader>rn <cmd>lua require('renamer').rename()<cr>
