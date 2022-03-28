@@ -20,6 +20,7 @@
     ~/.vim/ftplugin/html.vim: vim/ftplugin/html.vim
     ~/.vim/coc-settings.json: vim/coc-settings.json
     ~/.alacritty.yml: alacritty.yml
+    ~/.config/kitty/kitty.conf: kitty.conf
 
 - create:
     - ~/downloads
