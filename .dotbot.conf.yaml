@@ -21,6 +21,12 @@
     ~/.vim/coc-settings.json: vim/coc-settings.json
     ~/.alacritty.yml: alacritty.yml
     ~/.config/kitty/kitty.conf: kitty.conf
+    ~/.config/qutebrowser/config.py:
+      path: config/qutebrowser/config.py
+      if: '[[ "$(uname)" == "Linux" ]]'
+    ~/.qutebrowser/config.py:
+      path: config/qutebrowser/config.py
+      if: '[[ "$(uname)" == "Darwin" ]]'
 
 - create:
     - ~/downloads
