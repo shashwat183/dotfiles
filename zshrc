@@ -116,7 +116,25 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ls="exa -al --color=always --group-directories-first"
+# -- Global Aliases --
+if command -v exa &> /dev/null; then
+  alias ls="exa -al --color=always --group-directories-first"
+fi
+
+# -- Global Key Bindings --
+bindkey '^ ' autosuggest-accept
+
+# -- Set Editor --
+if command -v nvim &> /dev/null; then
+  export EDITOR='nvim'
+else
+  export EDITOR='vim'
+fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# -- Local zshrc (can override aliases in this global zshrc) --
+if [ -f ~/.local_zshrc ]; then
+  source ~/.local_zshrc
+fi

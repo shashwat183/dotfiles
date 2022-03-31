@@ -4,7 +4,7 @@ M2_HOME="/Applications/IntelliJ IDEA CE.app/Contents/plugins/maven/lib/maven3"
 MYSQL_HOME=/usr/local/mysql
 POSTGRES13=/Applications/Postgres.app/Contents/Versions/13/bin/
 
-PATH=$PATH:$GOPATH/bin:$M2_HOME/bin:$MYSQL_HOME/bin:$POSTGRES13:/Users/shashwatpragya/Scripts:/Users/shashwatpragya/Tools
+PATH=$PATH:$GOPATH/bin:$M2_HOME/bin:$MYSQL_HOME/bin:$POSTGRES13
 PATH=/usr/local/opt/openjdk/bin:$PATH
 GLOBAL_LOMBOK_INSTALL=/usr/local/share/lombok
 
@@ -32,4 +32,4 @@ alias lvim="/Users/shashwatpragya/.local/bin/lvim"
 alias vim="nvim"
 alias vi="nvim"
 
-neofetch
+source ~/.local_zprofile
