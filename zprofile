@@ -32,4 +32,6 @@ alias lvim="/Users/shashwatpragya/.local/bin/lvim"
 alias vim="nvim"
 alias vi="nvim"
 
-source ~/.local_zprofile
+if [ -f ~/.local_zprofile ]; then
+  source ~/.local_zprofile
+fi
