@@ -1,5 +1,5 @@
 # PATH VARIABLES
-GOPATH=/Users/shashwatpragya/GoProjects/golib:/Users/shashwatpragya/GoProjects/code
+GOPATH=$HOME/GoProjects/golib:$HOME/GoProjects/code
 M2_HOME="/Applications/IntelliJ IDEA CE.app/Contents/plugins/maven/lib/maven3"
 MYSQL_HOME=/usr/local/mysql
 POSTGRES13=/Applications/Postgres.app/Contents/Versions/13/bin/
@@ -20,17 +20,15 @@ export CPPFLAGS="-I/usr/local/opt/openjdk/include"
 
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/shashwatpragya/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/shashwatpragya/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '$HOME/google-cloud-sdk/path.zsh.inc' ]; then . '$HOME/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/shashwatpragya/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/shashwatpragya/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '$HOME/google-cloud-sdk/completion.zsh.inc' ]; then . '$HOME/google-cloud-sdk/completion.zsh.inc'; fi
 
 alias commit-history="git log --pretty=oneline"
 alias get-dns-server-ip="host -a www.google.com | grep from"
 alias cn="clear && neofetch"
-alias lvim="/Users/shashwatpragya/.local/bin/lvim"
-alias vim="nvim"
-alias vi="nvim"
+alias lvim="$HOME/.local/bin/lvim"
 
 if [ -f ~/.local_zprofile ]; then
   source ~/.local_zprofile

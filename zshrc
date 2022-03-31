@@ -118,7 +118,9 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # -- Global Aliases --
 if command -v exa &> /dev/null; then
-  alias ls="exa -al --color=always --group-directories-first"
+  alias ls="exa -g --color=always --group-directories-first --icons"
+  alias lg="ls -l --git"
+  alias la="ls -lah"
 fi
 
 # -- Global Key Bindings --
