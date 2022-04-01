@@ -19,7 +19,7 @@
     ~/.vim/ftplugin/vim.vim: vim/ftplugin/vim.vim
     ~/.vim/ftplugin/html.vim: vim/ftplugin/html.vim
     ~/.vim/coc-settings.json: vim/coc-settings.json
-    ~/.alacritty.yml: alacritty.yml
+    ~/.config/alacritty/alacritty.yml: alacritty.yml
     ~/.config/kitty/kitty.conf: kitty.conf
     ~/.config/qutebrowser/config.py:
       path: config/qutebrowser/config.py
