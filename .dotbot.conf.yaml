@@ -27,6 +27,12 @@
     ~/.qutebrowser/config.py:
       path: config/qutebrowser/config.py
       if: '[[ "$(uname)" == "Darwin" ]]'
+    ~/.xmobarrc:
+      path: xmobarrc
+      if: '[[ "$(uname)" == "Linux" ]]'
+    ~/.xmonad/xmonad.hs:
+      path: xmonad.hs
+      if: '[[ "$(uname)" == "Linux" ]]'
 
 - create:
     - ~/downloads
