@@ -33,6 +33,9 @@
     ~/.xmonad/xmonad.hs:
       path: xmonad.hs
       if: '[[ "$(uname)" == "Linux" ]]'
+    ~/.config/picom/picom.conf:
+      path: config/picom/picom.conf
+      if: '[[ "$(uname)" == "Linux" ]]'
 
 - create:
     - ~/downloads
