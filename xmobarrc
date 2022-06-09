@@ -1,7 +1,7 @@
 Config {
 
    -- appearance
-     font =         "xft:Inconsolata Nerd Font:size=5:bold:antialias=true"
+     font =         "xft:Inconsolata Nerd Font:size=10:bold:antialias=true"
    , bgColor =      "#1e1e1e"
    , fgColor =      "#cccccc"
    , position = Static { xpos = 40, ypos = 20, width = 1640, height = 30 }

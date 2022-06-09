@@ -3,6 +3,7 @@ import XMonad.Layout.Spacing
 import XMonad.Layout.Gaps
 import XMonad.Hooks.DynamicLog
 import XMonad.Util.SpawnOnce
+import XMonad.Hooks.EwmhDesktops
 import qualified XMonad.StackSet as W
 import XMonad.Util.EZConfig
 
@@ -41,6 +42,7 @@ myConfig = def
   , borderWidth = 5
 	, layoutHook = spacingWithEdge 15 $ myLayoutHook
   , startupHook = myStartupHook
+  , handleEventHook = fullscreenEventHook
 	}
   `additionalKeysP`
   [
