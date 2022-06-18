@@ -4,3 +4,5 @@
 [core]
 	autocrlf = input
 	excludesfile = /Users/shashwatpragya/.global_gitignore
+[init]
+	defaultBranch = main
