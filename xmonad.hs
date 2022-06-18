@@ -17,7 +17,7 @@ myStartupHook = do
   spawnOnce "xrandr -s 1920x1080 &"
   spawnOnce "nitrogen --restore &"
   spawnOnce "picom &"
-  spawnOnce "/usr/bin/trayer --edge top --align right --SetDockType true --SetPartialStrut true --width 10 --transparent true --expand true --distance 20 --height 30 --margin 40 --tint 0x1e1e1e --padding 20 &"
+  spawnOnce "/usr/bin/trayer --edge top --align right --SetDockType true --SetPartialStrut true --width 10 --transparent true --expand true --distance 20 --height 30 --margin 30 --tint 0x1e1e1e --padding 20 &"
 
 
 -- main function
