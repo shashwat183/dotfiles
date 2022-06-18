@@ -19,7 +19,6 @@
     ~/.vim/ftplugin/vim.vim: vim/ftplugin/vim.vim
     ~/.vim/ftplugin/html.vim: vim/ftplugin/html.vim
     ~/.vim/coc-settings.json: vim/coc-settings.json
-    ~/.config/alacritty/alacritty.yml: alacritty.yml
     ~/.config/kitty/kitty.conf: kitty.conf
     ~/.config/qutebrowser/config.py:
       path: config/qutebrowser/config.py
@@ -35,6 +34,12 @@
       if: '[[ "$(uname)" == "Linux" ]]'
     ~/.config/picom/picom.conf:
       path: config/picom/picom.conf
+      if: '[[ "$(uname)" == "Linux" ]]'
+    ~/.config/alacritty/alacritty.yml: 
+      path: alacritty.yml
+      if: '[[ "$(uname)" == "Darwin" ]]'
+    ~/.config/alacritty/alacritty.yml: 
+      path: alacritty_arch.yml
       if: '[[ "$(uname)" == "Linux" ]]'
 
 - create:
