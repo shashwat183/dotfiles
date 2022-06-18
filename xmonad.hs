@@ -46,7 +46,8 @@ myConfig = def
 	}
   `additionalKeysP`
   [
-    ("M-p", spawn "rofi -modi drun -show")
+    -- ("M-p", spawn "rofi -modi drun -show")
+    ("M-p", spawn "launcher_colorful")
   , ("M-S-p", spawn "rofi -show run")
   ]
 
