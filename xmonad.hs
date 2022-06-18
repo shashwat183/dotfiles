@@ -38,8 +38,8 @@ toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
 
 -- Main Configuraton, override the defaults to your liking
 myConfig = def
-	{ terminal = "kitty"
-  , borderWidth = 5
+	{ terminal = "Alacritty"
+  , borderWidth = 0
 	, layoutHook = spacingWithEdge 15 $ myLayoutHook
   , startupHook = myStartupHook
   , handleEventHook = fullscreenEventHook
