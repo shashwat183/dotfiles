@@ -29,6 +29,12 @@
     ~/.qutebrowser/config.py:
       path: config/qutebrowser/config.py
       if: '[[ "$(uname)" == "Darwin" ]]'
+    ~/.config/alacritty/alacritty.yml: 
+      path: alacritty.yml
+      if: '[[ "$(uname)" == "Darwin" ]]'
+    ~/.config/alacritty/alacritty.yml: 
+      path: alacritty_arch.yml
+      if: '[[ "$(uname)" == "Linux" ]]'
     ~/.xmobarrc:
       path: xmobarrc
       if: '[[ "$(uname)" == "Linux" ]]'
@@ -38,11 +44,8 @@
     ~/.config/picom/picom.conf:
       path: config/picom/picom.conf
       if: '[[ "$(uname)" == "Linux" ]]'
-    ~/.config/alacritty/alacritty.yml: 
-      path: alacritty.yml
-      if: '[[ "$(uname)" == "Darwin" ]]'
-    ~/.config/alacritty/alacritty.yml: 
-      path: alacritty_arch.yml
+    ~/.config/dunst/dunstrc:
+      path: config/dunst/dunstrc
       if: '[[ "$(uname)" == "Linux" ]]'
 
 - create:
