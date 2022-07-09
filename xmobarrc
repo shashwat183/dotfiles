@@ -1,10 +1,12 @@
 Config {
 
    -- appearance
-     font =         "xft:Inconsolata Nerd Font:size=9:bold:antialias=true"
+     font =         "xft:JetBrainsMono Nerd Font Mono:size=9:antialias=true"
+   , additionalFonts = [ "xft:Inconsolata Nerd Font:size=10:antialias=true" ]
    , bgColor =      "#1e1e1e"
-   , fgColor =      "#cccccc"
-   , position = Static { xpos = 30, ypos = 20, width = 1640, height = 30 }
+   , fgColor =      "#fff"
+   , alpha =        190
+   , position = Static { xpos = 0, ypos = 0, width = 1920, height = 25 }
  --  , position = TopW C 97
    , border =       NoBorder
    , borderColor =  "#cccccc"
@@ -12,7 +14,8 @@ Config {
    -- layout
    , sepChar =  "%"   -- delineator between plugin names and straight text
    , alignSep = "}{"  -- separator between left-right alignment
-   , template = " <fc=#4e8ae9></fc>  %UnsafeStdinReader% }{ <box type=Bottom width=2 mb=2 color=#42A5F5><fc=#42A5F5><action=`alacritty -e htop`>%multicpu%</action></fc></box>  <box type=Bottom width=2 mb=2 color=#6D8895><fc=#6D8895><action=`alacritty -e htop`>%memory%</action></fc></box>  <box type=Bottom width=2 mb=2 color=#E57C46><fc=#E57C46>%battery%</fc></box>  <box type=Bottom width=2 mb=2 color=#BA68C8><fc=#BA68C8><action=`alacritty -e htop`>%uptime%</action></fc></box>  <box type=Bottom width=2 mb=2 color=#AC8476><fc=#AC8476>%dynnetwork%</fc></box>  <box type=Bottom width=2 mb=2 color=#EC407A><fc=#EC407A><action=`alacritty --hold -t Calendar -e cal`>%date%</action></fc></box>  <box type=Bottom width=2 mb=2 color=#6C77BB><fc=#6C77BB><action=`alacritty -e alsamixer`>%default:Master% %default:Headphone%</action></fc></box>  <box type=Bottom width=2 mb=2 color=#FBC02D><fc=#FBC02D><action=`alacritty -e brave https://www.google.com/search\?q\=weather`>%EGCC%</action></fc></box> | %kbd% %locks% "
+   , template = " <fc=#4e8ae9><fn=1></fn></fc>  %UnsafeStdinReader% }{ <fc=#42A5F5><action=`alacritty -e htop`>%multicpu%</action></fc>  <fc=#6D8895><action=`alacritty -e htop`>%memory%</action></fc>  <fc=#E57C46>%battery%</fc>  <fc=#BA68C8><action=`alacritty -e htop`>%uptime%</action></fc>  <fc=#6C77BB><action=`alacritty -e alsamixer`>%default:Master% %default:Headphone%</action></fc>  <fc=#AC8476>%wi%</fc>  <fc=#EC407A><action=`alacritty --hold -t Calendar -e cal`>%date%</action></fc>  <fc=#FBC02D><action=`alacritty -e brave https://www.google.com/search\?q\=weather`>%EGCC%</action></fc> | %kbd% %locks% "
+-- , template = " <fc=#4e8ae9></fc>  %UnsafeStdinReader% }{ <box type=Bottom width=2 mb=2 color=#42A5F5><fc=#42A5F5><action=`alacritty -e htop`>%multicpu%</action></fc></box>  <box type=Bottom width=2 mb=2 color=#6D8895><fc=#6D8895><action=`alacritty -e htop`>%memory%</action></fc></box>  <box type=Bottom width=2 mb=2 color=#E57C46><fc=#E57C46>%battery%</fc></box>  <box type=Bottom width=2 mb=2 color=#BA68C8><fc=#BA68C8><action=`alacritty -e htop`>%uptime%</action></fc></box>  <box type=Bottom width=2 mb=2 color=#AC8476><fc=#AC8476>%dynnetwork%</fc></box>  <box type=Bottom width=2 mb=2 color=#EC407A><fc=#EC407A><action=`alacritty --hold -t Calendar -e cal`>%date%</action></fc></box>  <box type=Bottom width=2 mb=2 color=#6C77BB><fc=#6C77BB><action=`alacritty -e alsamixer`>%default:Master% %default:Headphone%</action></fc></box>  <box type=Bottom width=2 mb=2 color=#FBC02D><fc=#FBC02D><action=`alacritty -e brave https://www.google.com/search\?q\=weather`>%EGCC%</action></fc></box> | %kbd% %locks% "
 -- , template = " <fc=#4e8ae9></fc>  %UnsafeStdinReader% }{ <box type=Bottom width=2 mb=2 color=#51afef><fc=#51afef><action=`alacritty -e htop`>%multicpu%</action></fc></box>  <box type=Bottom width=2 mb=2 color=#ff6c6b><fc=#ff6c6b><action=`alacritty -e htop`>%memory%</action></fc></box>  <box type=Bottom width=2 mb=2 color=#da8548><fc=#da8548>%battery%</fc></box>  <box type=Bottom width=2 mb=2 color=#c678dd><fc=#c678dd><action=`alacritty -e htop`>%uptime%</action></fc></box>  <box type=Bottom width=2 mb=2 color=#98be65><fc=#98be65>%dynnetwork%</fc></box>  <box type=Bottom width=2 mb=2 color=#e5e5e5><fc=#e5e5e5>%date%</fc></box> | %kbd% %locks% "
 -- %trayerpad%"
 -- %RJTT%
@@ -54,24 +57,27 @@ Config {
          , ("partly cloudy", "")
          , ("mostly cloudy", "")
          , ("considerable cloudiness", "朗")]
-         [ "--template", "<station> <fc=#FBC02D><tempC></fc>°C <skyConditionS>"] 36000
+         [ "--template", "<fc=#FBC02D><tempC></fc>°C <fn=1><skyConditionS></fn>"] 36000
 
         -- network activity monitor (dynamic interface resolution)
-        , Run DynNetwork     [ "--template" , " <rx>KB ﰵ <tx>KB"
+        , Run DynNetwork     [ "--template" , "<dev> <fn=1>ﰬ</fn> <rx>KB <fn=1>ﰵ</fn> <tx>KB"
                              , "--Low"      , "1000"       -- units: B/s
                              , "--High"     , "5000"       -- units: B/s 
                              -- , "--low"      , "darkgreen"
-                             , "--normal"   , "#98be65"
-                             , "--high"     , "darkred"
+                             -- , "--normal"   , "#98be65"
+                             -- , "--high"     , "darkred"
                              ] 10
 
+        -- Wifi monitor
+        , Run Wireless "" [ "--template", "<essid> <quality>" ] 10
+
         -- cpu activity monitor
-        , Run MultiCpu       [ "--template" , " CPU: <total0>% | <total1>% | <total2>% | <total3>%"
+        , Run MultiCpu       [ "--template" , "<fn=1></fn> <total0>%,<total1>%,<total2>%,<total3>%"
                              , "--Low"      , "0"         -- units: %
                              , "--High"     , "85"         -- units: %
                              -- , "--low"      , "darkgreen"
-                             , "--normal"   , "#51afef"
-                             , "--high"     , "darkred"
+                             -- , "--normal"   , "#51afef"
+                             -- , "--high"     , "darkred"
                              ] 10
 
         -- cpu core temperature monitor
@@ -84,7 +90,7 @@ Config {
                              ] 50
 
         -- memory usage monitor
-        , Run Memory         [ "--template" ," RAM: <usedratio>%"
+        , Run Memory         [ "--template" ,"<fn=1></fn> <usedratio>%"
                              , "--Low"      , "20"        -- units: %
                              , "--High"     , "80"        -- units: %
                              -- , "--low"      , "darkgreen"
@@ -93,7 +99,7 @@ Config {
                              ] 10
 
         -- battery monitor
-        , Run Battery        [ "--template" , "<leftipat> Battery: <left>"
+        , Run Battery        [ "--template" , "<fn=1><leftipat></fn> <left>%"
                              , "--Low"      , "10"        -- units: %
                              , "--High"     , "80"        -- units: %
                              -- , "--low"      , "darkred"
@@ -112,20 +118,22 @@ Config {
                                        -- , "-i"	, "<fc=#006000>Charged</fc>"
                              ] 50
         -- Uptime
-        , Run Uptime ["-t", " Uptime: <days>d <hours>h"] 360
+        , Run Uptime ["-t", "<fn=1></fn> <days>d <hours>h"] 360
         -- time and date indicator
         --   (%F = y-m-d date, %a = day of week, %T = h:m:s time)
-        , Run Date           " %a %F (%H:%M)" "date" 10
+        , Run Date           "<fn=1></fn> %H:%M %a %b %d" "date" 10
 -- 
         -- Master Volume Indicator
-        , Run Volume "default" "Master" ["--template" , " <volumestatus>"
+        , Run Volume "default" "Master" ["--template" , "<volumestatus>"
                                          , "--"
-                                         , "-O", "on "
+                                         , "-O", "<fn=1></fn> "
+                                         , "-o", "<fn=1>婢</fn>"
                                          , "-C", "#6C77BB"]10
         -- Headphone Volume Indicator
-        , Run Volume "default" "Headphone" ["--template" , " <volumestatus>"
+        , Run Volume "default" "Headphone" ["--template" , "<volumestatus>"
                                          , "--"
-                                         , "-O", "on "
+                                         , "-O", "<fn=1></fn> "
+                                         , "-o", "<fn=1>ﳌ</fn>"
                                          , "-C", "#6C77BB"]10
         -- keyboard layout indicator
         , Run Kbd            [ ("us(dvorak)" , "<fc=#00008B>DV</fc>")
