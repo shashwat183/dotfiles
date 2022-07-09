@@ -20,6 +20,8 @@
     ~/.vim/ftplugin/html.vim: vim/ftplugin/html.vim
     ~/.vim/coc-settings.json: vim/coc-settings.json
     ~/.config/kitty/kitty.conf: kitty.conf
+    ~/.config/lf/lfrc: config/lf/lfrc 
+    ~/.config/lf/icons: config/lf/icons
     ~/.config/qutebrowser/config.py:
       path: config/qutebrowser/config.py
       if: '[[ "$(uname)" == "Linux" ]]'

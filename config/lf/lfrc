@@ -1,0 +1,30 @@
+# vim:ft=conf
+#
+# Basic Settings
+# set hidden true
+set icons true
+
+# Custom Commands
+cmd mkdir ${{
+    printf "Directory Name: "
+    read ans
+    mkdir $ans
+}}
+
+# Remove some defaults
+# Use it for more interesting stuff
+map m
+
+# Basic Functions
+map . set hidden!
+map DD delete
+map md mkdir
+map x cut
+
+# Movements
+map gc cd ~/Code
+map gh cd ~/
+map gC cd ~/.config
+map gj cd ~/Code/Java/
+map gG cd ~/Code/Go/
+map gp cd ~/Code/Python/
