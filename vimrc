@@ -5,6 +5,7 @@
 set noswapfile		" dont create swap files
 set noerrorbells	" no sound effects in vim cause they are uber annoying
 set number 		" set line numbers
+set relativenumber "set relative line numbering"
 set nocompatible	" required
 set backspace=2		" delete in insert mode deletes characters
 syntax on
@@ -55,7 +56,7 @@ Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'neoclide/coc.nvim'
 Plugin 'nvie/vim-flake8'
-Plugin 'scrooloose/nerdtree'
+Plugin 'preservim/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
