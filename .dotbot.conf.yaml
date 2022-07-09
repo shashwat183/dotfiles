@@ -47,6 +47,12 @@
     ~/.config/dunst/dunstrc:
       path: config/dunst/dunstrc
       if: '[[ "$(uname)" == "Linux" ]]'
+    ~/.config/qtile/config.py:
+      path: config/qtile/config.py 
+      if: '[[ "$(uname)" == "Linux" ]]'
+    ~/.config/qtile/autostart.sh:
+      path: config/qtile/autostart.sh
+      if: '[[ "$(uname)" == "Linux" ]]'
 
 - create:
     - ~/downloads
