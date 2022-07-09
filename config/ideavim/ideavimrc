@@ -1,0 +1,66 @@
+" "------------------------------------------------------------------------------
+" " General Settings
+" "------------------------------------------------------------------------------
+"
+" set noswapfile		" dont create swap files
+" set noerrorbells	" no sound effects in vim cause they are uber annoying
+" set number 		" set line numbers
+" set relativenumber "set relative line numbering"
+" set backspace=2		" delete in insert mode deletes characters
+" syntax on
+" set hidden		" dont have to save when switching file buffer
+" set incsearch " Do incremental searching.
+"
+" imap jj <ESC>
+"
+" " where splits occur when using sp and vs
+" set splitbelow
+" set splitright
+"
+" " Give more space for displaying messages.
+" set cmdheight=2
+"
+" " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" " delays and poor user experience.
+" set updatetime=300
+"
+" " Enable folding(collapse a section of code like a method or class)
+" set foldmethod=indent
+" set foldlevel=99
+"
+" " Set utf-8 encoding
+" set encoding=utf-8
+"
+" set colorcolumn=80
+" highlight ColorColumn ctermbg=0 guibg=lightgrey
+"
+" " Leader mapped to <SPACE>
+" let mapleader =" "
+"
+" " split navigations
+" nnoremap <C-J> <C-W><C-J>
+" nnoremap <C-K> <C-W><C-K>
+" nnoremap <C-L> <C-W><C-L>
+" nnoremap <C-H> <C-W><C-H>
+"
+" " Hard Mode Key Mapping -- Disable arrow keys in all modes
+" nnoremap <Left> <Nop>
+" nnoremap <Right> <Nop>
+" nnoremap <Up> <Nop>
+" nnoremap <Down> <Nop>
+" nnoremap <PageUp> <Nop>
+" nnoremap <PageDown> <Nop>
+" inoremap <Left> <Nop>
+" inoremap <Right> <Nop>
+" inoremap <Up> <Nop>
+" inoremap <Down> <Nop>
+" inoremap <PageUp> <Nop>
+" inoremap <PageDown> <Nop>
+" vnoremap <Left> <Nop>
+" vnoremap <Right> <Nop>
+" vnoremap <Up> <Nop>
+" vnoremap <Down> <Nop>
+" vnoremap <PageUp> <Nop>
+" vnoremap <PageDown> <Nop>
+"
+source ~/.vimrc

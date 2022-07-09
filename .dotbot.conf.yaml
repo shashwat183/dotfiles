@@ -22,6 +22,7 @@
     ~/.config/kitty/kitty.conf: kitty.conf
     ~/.config/lf/lfrc: config/lf/lfrc 
     ~/.config/lf/icons: config/lf/icons
+    ~/.config/ideavim/ideavimrc: config/ideavim/ideavimrc
     ~/.config/qutebrowser/config.py:
       path: config/qutebrowser/config.py
       if: '[[ "$(uname)" == "Linux" ]]'
