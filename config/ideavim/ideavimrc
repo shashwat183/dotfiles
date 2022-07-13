@@ -21,7 +21,7 @@
 " set cmdheight=2
 "
 " " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" " delays and poor user experience.
+" " delays and poor user experiencek
 " set updatetime=300
 "
 " " Enable folding(collapse a section of code like a method or class)
@@ -62,5 +62,20 @@
 " vnoremap <Down> <Nop>
 " vnoremap <PageUp> <Nop>
 " vnoremap <PageDown> <Nop>
-"
+
 source ~/.vimrc
+set notimeout
+set which-key
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap gr :action ShowUsages<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gt :action GotoTest<CR>
+nnoremap gu :action GotoSuperMethod<CR>
+" nnoremap <leader>q :action 
+nnoremap <leader>lj :action GotoNextError<CR>
+nnoremap <leader>lk :action GotoPreviousError<CR>
+nnoremap <leader>vr :action IdeaVim.ReloadVimRc.reload<CR>
+nnoremap <leader>gl :action Annotate<CR>
+nnoremap <leader>o :action ActivateStructureToolWindow<CR>
+nnoremap <leader>c :q<CR>
+xnoremap J :action MoveLineDown<CR> xnoremap K :action MoveLineUp<CR>
