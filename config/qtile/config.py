@@ -44,7 +44,7 @@ def autostart():
     subprocess.Popen([autostart])
 
 
-rofi_launcher = "launcher_misc"
+rofi_launcher = "/home/sp/.config/rofi/bin/launcher_misc"
 browser = "brave"
 note_taking_app = "notion-app"
 clickup = """brave --profile-directory=Default
@@ -183,7 +183,8 @@ keys = [
 #         ]
 #     )
 
-groups = [Group(i) for i in ["www", "term", "work-www"]]
+# groups = [Group(i) for i in ["term", "www", "work-www"]]
+groups = [Group(i) for i in ["", "", "", "", "", "ﳑ"]]
 
 for i in groups:
     keys.extend(
@@ -261,7 +262,7 @@ screens = [
                     inactive="#429942",
                     active="#429942",
                     hide_unused=False,
-                    fontsize=bar_font_size,
+                    fontsize=28,
                 ),
                 widget.Prompt(font=bar_font),
                 widget.WindowName(
