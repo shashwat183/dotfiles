@@ -5,7 +5,7 @@ MYSQL_HOME=/usr/local/mysql
 POSTGRES13=/Applications/Postgres.app/Contents/Versions/13/bin/
 
 PATH=$PATH:$GOPATH/bin:$M2_HOME/bin:$MYSQL_HOME/bin:$POSTGRES13
-PATH=/usr/local/opt/openjdk/bin:$PATH
+# PATH=/usr/local/opt/openjdk/bin:$PATH
 GLOBAL_LOMBOK_INSTALL=/usr/local/share/lombok
 
 export PATH
