@@ -28,7 +28,16 @@ import os
 import subprocess
 
 from libqtile import bar, layout, widget
-from libqtile.config import Click, Drag, Group, Key, Match, Screen
+from libqtile.config import (
+    Click,
+    Drag,
+    DropDown,
+    Group,
+    Key,
+    Match,
+    ScratchPad,
+    Screen,
+)
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 from libqtile import hook
@@ -47,8 +56,7 @@ def autostart():
 rofi_launcher = "/home/sp/.config/rofi/bin/launcher_misc"
 browser = "brave"
 note_taking_app = "notion-app"
-clickup = """brave --profile-directory=Default
- --app-id=edcmabgkbicempmpgmniellhbjopafjh"""
+clickup = "clickup"
 spotify = "spotify"
 mail_client = "alacritty -e neomutt"
 spotify_tui = "alacritty -e spt"
@@ -57,6 +65,7 @@ google_search = "xdg-open https://www.google.com"
 youtube = "xdg-open https://www.youtube.com"
 twitter = "xdg-open https://www.twitter.com"
 java_IDE = "idea"
+fb_messenger = "caprine"
 
 keys = [
     # A list of available commands that can be bound to keys can be found
@@ -142,10 +151,6 @@ keys = [
     ),
     Key([mod], "p", lazy.spawn(rofi_launcher)),
     Key([mod, "shift"], "b", lazy.spawn(browser)),
-    Key([mod, "shift"], "n", lazy.spawn(note_taking_app)),
-    Key([mod], "u", lazy.spawn(clickup)),
-    Key([mod, "shift"], "s", lazy.spawn(spotify)),
-    Key([mod, "shift"], "m", lazy.spawn(mail_client)),
     Key([mod], "s", lazy.spawn(spotify_tui)),
     Key([mod, "shift"], "t", lazy.spawn(terminal_multiplexer)),
     Key([mod, "shift"], "g", lazy.spawn(google_search)),
@@ -184,7 +189,7 @@ keys = [
 #     )
 
 # groups = [Group(i) for i in ["term", "www", "work-www"]]
-groups = [Group(i) for i in ["", "", "", "", "", "ﳑ"]]
+groups = [Group(i) for i in ["", "", "", "", "", "ﳑ"]]
 
 for i in groups:
     keys.extend(
@@ -212,6 +217,120 @@ for i in groups:
             #     desc="move focused window to group {}".format(i.name)),
         ]
     )
+
+scratch_pad_group = ScratchPad(
+    "scratchpad",
+    [
+        # Drop Down Terminal Kitty
+        DropDown(
+            "term",
+            "alacritty",
+            on_focus_lost_hide=True,
+            x=0.01,
+            y=0.01,
+            height=0.98,
+            width=0.98,
+            opacity=1,
+        ),
+        # Drop Down Notion Note taking
+        DropDown(
+            "note-app",
+            note_taking_app,
+            on_focus_lost_hide=True,
+            x=0.01,
+            y=0.01,
+            height=0.98,
+            width=0.98,
+            opacity=1,
+        ),
+        # Drop Down Spotify
+        DropDown(
+            "spotify",
+            spotify,
+            on_focus_lost_hide=True,
+            x=0.1,
+            y=0.1,
+            height=0.8,
+            width=0.8,
+            opacity=1,
+        ),
+        # Drop Down Neomutt
+        DropDown(
+            "mail_client",
+            mail_client,
+            on_focus_lost_hide=True,
+            x=0.1,
+            y=0.1,
+            height=0.8,
+            width=0.8,
+            opacity=1,
+        ),
+        # Drop Down Clickup
+        DropDown(
+            "clickup",
+            clickup,
+            on_focus_lost_hide=True,
+            x=0.1,
+            y=0.1,
+            height=0.8,
+            width=0.8,
+            opacity=1,
+        ),
+        # Drop Down FB Messenger
+        DropDown(
+            "fb-messenger",
+            "caprine",
+            on_focus_lost_hide=True,
+            x=0.1,
+            y=0.1,
+            height=0.8,
+            width=0.8,
+            opacity=1,
+        ),
+    ],
+)
+
+groups.append(scratch_pad_group)
+
+keys.extend(
+    [
+        Key(
+            [mod],
+            "t",
+            lazy.group["scratchpad"].dropdown_toggle("term"),
+        ),
+        Key(
+            [mod],
+            "n",
+            lazy.group["scratchpad"].dropdown_toggle("note-app"),
+        ),
+        Key(
+            [mod],
+            "s",
+            lazy.group["scratchpad"].dropdown_toggle("spotify"),
+        ),
+        Key(
+            [mod],
+            "m",
+            lazy.group["scratchpad"].dropdown_toggle("mail_client"),
+        ),
+        Key(
+            [mod],
+            "u",
+            lazy.group["scratchpad"].dropdown_toggle("clickup"),
+        ),
+        Key(
+            [mod, "shift"],
+            "m",
+            lazy.group["scratchpad"].dropdown_toggle("fb-messenger"),
+        ),
+        # Key(
+        #     [],
+        #     "Escape",
+        #     lazy.group["scratchpad"].hide_all(),
+        # ),
+    ]
+)
 
 layouts = [
     # layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"],

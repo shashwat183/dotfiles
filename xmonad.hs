@@ -55,7 +55,7 @@ myConfig = def
   `additionalKeysP`
   [
     -- ("M-p", spawn "rofi -modi drun -show")
-    ("M-p", spawn "launcher_colorful")
+    ("M-p", spawn "/home/sp/.config/rofi/bin/launcher_misc")
   , ("M-S-p", spawn "rofi -show run")
   , ("M-S-b", spawn "brave")
   , ("M-S-n", spawn "notion-app")

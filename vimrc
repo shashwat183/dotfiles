@@ -1,7 +1,6 @@
 "------------------------------------------------------------------------------
 " General Settings
 "------------------------------------------------------------------------------
-
 set noswapfile		" dont create swap files
 set noerrorbells	" no sound effects in vim cause they are uber annoying
 set number 		" set line numbers
@@ -11,6 +10,10 @@ set backspace=2		" delete in insert mode deletes characters
 syntax on
 set hidden		" dont have to save when switching file buffer
 imap jj <ESC>
+
+" Cursor settings
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
 
 " where splits occur when using sp and vs
 set splitbelow
@@ -74,7 +77,8 @@ Plugin 'lifepillar/vim-gruvbox8'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
-Plugin 'lewis6991/gitsigns.nvim'
+Plugin 'tomasiser/vim-code-dark'
+Plugin 'psliwka/vim-smoothie'
 " ...
 
 " All of your Plugins must be added before the following line
@@ -89,9 +93,9 @@ let g:syntastic_aggregate_errors = 1
 set t_Co=256
 
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
-colorscheme gruvbox8
+colorscheme codedark
 set background=dark
-let g:airline_theme='gruvbox8'
+let g:airline_theme='codedark'
 let g:airline_powerline_fonts = 1
 let g:Powerline_symbols = 'fancy'
 let g:airline#extensions#tabline#enabled = 1
@@ -197,4 +201,10 @@ nnoremap <Leader>q :bd<CR>
 
 " FZF Key Binding
 nnoremap <Leader>f :Files<CR>
+
+" Terminal Bindings
+nnoremap <C-\> :term<CR>
+tnoremap jk <C-\><C-n>
+tnoremap <C-\> <C-\><C-n>:q!<CR>
+
 
