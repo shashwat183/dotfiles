@@ -1,6 +1,18 @@
 # -- enable bash autocompletion in zsh --
 autoload -U +X bashcompinit && bashcompinit
 
+# --------------------------------------------------------------------------- #
+# Plugins
+# --------------------------------------------------------------------------- #
+
+# -- zsh vi mode(better than default) --
+if  [ -f ~/.zsh/plugins/zsh-vi-mode/zsh-vi-mode.zsh ]; then
+  source ~/.zsh/plugins/zsh-vi-mode/zsh-vi-mode.zsh
+  ZVM_VI_INSERT_ESCAPE_BINDKEY=jj
+else
+  echo "zsh-vi-mode not found, please install"
+fi
+
 # -- zsh autosuggestions --
 if  [ -f ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
   source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -9,11 +21,11 @@ else
   echo "zsh-autosuggestions not found, please install"
 fi
 
-# -- zsh syntax highlighting --
-if  [ -f ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
-  source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# -- fast syntax highlighting --
+if  [ -f ~/.zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh ]; then
+  source ~/.zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 else
-  echo "zsh-syntax-highlighting not found, please install"
+  echo "fast-syntax-highlighting not found, please install"
 fi
 
 # -- Starship prompt theme --
@@ -35,7 +47,9 @@ if command -v exa &> /dev/null; then
   alias ls="exa -g --color=always --group-directories-first --icons"
 fi
 
-# -- global aliases --
+# --------------------------------------------------------------------------- #
+# aliases
+# --------------------------------------------------------------------------- #
 alias py='python'
 alias ll="ls -la"
 alias zsource='source ~/.zshrc'
@@ -54,8 +68,10 @@ function take {
   cd $1
 }
 
+bindkey -v
+bindkey '^ ' autosuggest-accept
+
 # -- Support for Local zshrc --
 if [ -f ~/.local_zshrc ]; then
   source ~/.local_zshrc
 fi
-
