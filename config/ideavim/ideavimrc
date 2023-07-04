@@ -79,3 +79,5 @@ nnoremap <leader>gl :action Annotate<CR>
 nnoremap <leader>o :action ActivateStructureToolWindow<CR>
 nnoremap <leader>c :q<CR>
 xnoremap J :action MoveLineDown<CR> xnoremap K :action MoveLineUp<CR>
+set visualbell
+set noerrorbells
