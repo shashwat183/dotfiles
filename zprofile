@@ -3,7 +3,7 @@ GOLIBPATH=$HOME/GoProjects/golib
 GOCODEPATH=$HOME/GoProjects/code
 # GOBIN=$GOLIBPATH/bin
 GOPATH=$GOLIBPATH:$GOCODEPATH
-M2_HOME="/Applications/IntelliJ IDEA CE.app/Contents/plugins/maven/lib/maven3"
+# M2_HOME="/Applications/IntelliJ IDEA CE.app/Contents/plugins/maven/lib/maven3"
 MYSQL_HOME=/usr/local/mysql
 POSTGRES13=/Applications/Postgres.app/Contents/Versions/13/bin/
 
@@ -14,7 +14,7 @@ GLOBAL_LOMBOK_INSTALL=/usr/local/share/lombok
 export PATH
 export GOPATH
 # export GOBIN
-export M2_HOME
+# export M2_HOME
 export MYSQL_HOME
 export GLOBAL_LOMBOK_INSTALL
 
