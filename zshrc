@@ -60,7 +60,11 @@ alias la="ls -lah"
 alias l="ls -l"
 
 # safer rm, trash puts files/folders into trash (macos only)
-alias rm=trash
+if command -v exa &> /dev/null; then
+  alias rm=trash
+else
+  echo "command trash not found, please install"
+fi
 
 # take = create a new dir and cd into it.
 function take {
