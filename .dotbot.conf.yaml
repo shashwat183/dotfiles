@@ -23,6 +23,7 @@
     ~/.config/lf/lfrc: config/lf/lfrc 
     ~/.config/lf/icons: config/lf/icons
     ~/.config/ideavim/ideavimrc: config/ideavim/ideavimrc
+    ~/.config/starship.toml: starship.toml
     ~/.config/qutebrowser/config.py:
       path: config/qutebrowser/config.py
       if: '[[ "$(uname)" == "Linux" ]]'
