@@ -74,6 +74,7 @@ function take {
 
 bindkey -v
 bindkey '^ ' autosuggest-accept
+unsetopt BEEP
 
 # -- Support for Local zshrc --
 if [ -f ~/.local_zshrc ]; then
