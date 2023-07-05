@@ -39,6 +39,13 @@ else
   echo "zsh-z not found, please install"
 fi
 
+# -- zsh-fzf-search-history --
+if  [ -f ~/.zsh/plugins/zsh-fzf-history-search/zsh-fzf-history-search.plugin.zsh ]; then
+  source ~/.zsh/plugins/zsh-fzf-history-search/zsh-fzf-history-search.plugin.zsh
+else
+  echo "zsh-fzf-search-history not found, please install"
+fi
+
 # -- Starship prompt theme --
 if command -v starship &> /dev/null; then
   eval "$(starship init zsh)"
