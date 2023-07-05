@@ -1,6 +1,10 @@
 # -- enable bash autocompletion in zsh --
 autoload -U +X bashcompinit && bashcompinit
 
+autoload -U compinit; compinit
+
+zstyle ':completion:*' menu select
+
 # --------------------------------------------------------------------------- #
 # Plugins
 # --------------------------------------------------------------------------- #
@@ -26,6 +30,13 @@ if  [ -f ~/.zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin
   source ~/.zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 else
   echo "fast-syntax-highlighting not found, please install"
+fi
+
+# -- zsh-z --
+if  [ -f ~/.zsh/plugins/zsh-z/zsh-z.plugin.zsh ]; then
+  source ~/.zsh/plugins/zsh-z/zsh-z.plugin.zsh
+else
+  echo "zsh-z not found, please install"
 fi
 
 # -- Starship prompt theme --
