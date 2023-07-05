@@ -6,7 +6,7 @@ $git_branch\
 $git_status\
 $git_state\
 $fill\
-$cmd_duration $python$golang$java$env_var$time $jobs$azure$aws
+$cmd_duration $python$golang$java$env_var $jobs$azure$aws
 [ ](bold green)"""
 
 [character]
