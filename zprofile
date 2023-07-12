@@ -7,7 +7,7 @@ GOPATH=$GOLIBPATH:$GOCODEPATH
 MYSQL_HOME=/usr/local/mysql
 POSTGRES13=/Applications/Postgres.app/Contents/Versions/13/bin/
 
-PATH=$PATH:$GOLIBPATH/bin:$M2_HOME/bin:$MYSQL_HOME/bin:$POSTGRES13
+PATH=$PATH:$GOLIBPATH/bin:$MYSQL_HOME/bin:$POSTGRES13
 PATH=$HOME/.local/bin:$PATH
 # PATH=/usr/local/opt/openjdk/bin:$PATH
 GLOBAL_LOMBOK_INSTALL=/usr/local/share/lombok

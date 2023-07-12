@@ -20,9 +20,9 @@ env:
   # This value is used to set the `$TERM` environment variable for
   # each instance of Alacritty. If it is not present, alacritty will
   # check the local terminfo database and use `alacritty` if it is
-  # available, otherwise `xterm-256color` is used.
+  # available, otherwise `xterm-256nolor` is used.
   # TERM: alacritty
-  TERM: xterm-256color
+  TERM: xterm-256nolor
 window:
   # Window dimensions (changes require restart)
   #
@@ -45,9 +45,9 @@ window:
   #
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
-  #padding:
-  #  x: 0
-  #  y: 0
+  padding:
+    x: 8
+    y: 12
 
   # Spread additional padding evenly around the terminal content.
   #dynamic_padding: false
@@ -61,13 +61,13 @@ window:
   # Values for `decorations` (macOS only):
   #     - transparent: Title bar, transparent background and title bar buttons
   #     - buttonless: Title bar, transparent background and no title bar buttons
-  decorations: none
+  decorations: buttonless
 
   # Background opacity
   #
   # Window opacity as a floating point number from `0.0` to `1.0`.
   # The value `0.0` is completely transparent and `1.0` is opaque.
-  opacity: 0.80
+  opacity: 0.90
 
   # Startup Mode (changes require restart)
   #
@@ -153,7 +153,7 @@ font:
     # family: JetBrainsMono Nerd Font Mono
 
     # The `style` can be specified to pick a specific face.
-    style: Italic
+    style: Bold Italic
 
   # Point size
   size: 15.0
@@ -185,8 +185,8 @@ font:
   #
   #builtin_box_drawing: true
 
-# If `true`, bold text is drawn using the bright color variants.
-  draw_bold_text_with_bright_colors: false
+# If `true`, bold text is drawn using the bright nolor variants.
+  # draw_bold_text_with_bright_colors: false
 # #Colors (Dracula)
 colors:
   # Default colors
@@ -199,13 +199,13 @@ colors:
     black:   '0x000000'
     red:     '0xe94a51'
     green:   '0x37be78'
-    yellow:  '0xe2e822'
+    yellow:  '0xe2e815'
     blue:    '0x396ec7'
     magenta: '0xb835bc'
     cyan:    '0x3ba7cc'
     white:   '0xe5e5e5'
  
-  # Bright colors
+  # # Bright colors
   bright:
     black:   '0x666666'
     red:     '0xe94a51'
