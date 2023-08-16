@@ -17,7 +17,8 @@ else
   echo "zsh-vi-mode not found, please install"
 fi
 
-# The plugin will auto execute this zvm_after_init function
+# Execute these plugins after zsh vi mode to make sure keybindings are not
+# overwritten.
 function zvm_after_init() {
   # -- zsh autosuggestions --
   if  [ -f ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
@@ -32,6 +33,15 @@ function zvm_after_init() {
     source ~/.zsh/plugins/fzf/fzf.zsh
   else
     echo "fzf.zsh not found, please install"
+  fi
+
+  # -- zsh-history-substring-search --
+  if  [ -f ~/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh ]; then
+    source ~/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.plugin.zsh
+    bindkey '^[[A' history-substring-search-up
+    bindkey '^[[B' history-substring-search-down
+  else
+    echo "zsh-z not found, please install"
   fi
 }
 
