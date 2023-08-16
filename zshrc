@@ -17,13 +17,23 @@ else
   echo "zsh-vi-mode not found, please install"
 fi
 
-# -- zsh autosuggestions --
-if  [ -f ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
-  source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-  bindkey '^ ' autosuggest-accept
-else
-  echo "zsh-autosuggestions not found, please install"
-fi
+# The plugin will auto execute this zvm_after_init function
+function zvm_after_init() {
+  # -- zsh autosuggestions --
+  if  [ -f ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+    source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+    bindkey '^ ' autosuggest-accept
+  else
+    echo "zsh-autosuggestions not found, please install"
+  fi
+
+  # -- zsh-fzf-search-history --
+  if  [ -f ~/.zsh/plugins/fzf/fzf.zsh ]; then
+    source ~/.zsh/plugins/fzf/fzf.zsh
+  else
+    echo "fzf.zsh not found, please install"
+  fi
+}
 
 # -- fast syntax highlighting --
 if  [ -f ~/.zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh ]; then
@@ -37,13 +47,6 @@ if  [ -f ~/.zsh/plugins/zsh-z/zsh-z.plugin.zsh ]; then
   source ~/.zsh/plugins/zsh-z/zsh-z.plugin.zsh
 else
   echo "zsh-z not found, please install"
-fi
-
-# -- zsh-fzf-search-history --
-if  [ -f ~/.zsh/plugins/zsh-fzf-history-search/zsh-fzf-history-search.plugin.zsh ]; then
-  source ~/.zsh/plugins/zsh-fzf-history-search/zsh-fzf-history-search.plugin.zsh
-else
-  echo "zsh-fzf-search-history not found, please install"
 fi
 
 # -- Starship prompt theme --
@@ -90,8 +93,6 @@ function take {
   cd $1
 }
 
-bindkey -v
-bindkey '^ ' autosuggest-accept
 unsetopt BEEP
 
 # -- Support for Local zshrc --
