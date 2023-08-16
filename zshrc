@@ -41,7 +41,7 @@ function zvm_after_init() {
     bindkey '^[[A' history-substring-search-up
     bindkey '^[[B' history-substring-search-down
   else
-    echo "zsh-z not found, please install"
+    echo "zsh-history-substring-search not found, please install"
   fi
 }
 
