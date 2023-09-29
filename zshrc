@@ -78,6 +78,12 @@ if command -v exa &> /dev/null; then
   alias ls="exa -g --color=always --group-directories-first --icons"
 fi
 
+# Java global JVM args
+export JDTLS_JVM_ARGS="-javaagent:$HOME/.local/share/nvim/mason/packages/jdtls/lombok.jar"
+
+# Bob(neovim version manager) bin path
+export PATH="$PATH:$HOME/.local/share/bob/nvim-bin"
+
 # --------------------------------------------------------------------------- #
 # aliases
 # --------------------------------------------------------------------------- #
@@ -89,6 +95,7 @@ alias dkr='docker'
 alias lg="ls -l --git"
 alias la="ls -lah"
 alias l="ls -l"
+alias vi="vim -C"
 
 # safer rm, trash puts files/folders into trash (macos only)
 if command -v exa &> /dev/null; then
