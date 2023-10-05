@@ -66,12 +66,8 @@ else
   echo "starship prompt not found, please install"
 fi
 
-# -- Set Editor - neovim if found else vim --
-if command -v nvim &> /dev/null; then
-  export EDITOR='nvim'
-else
-  export EDITOR='vim'
-fi
+# -- Set Editor to neovim --
+export EDITOR='nvim'
 
 # -- use exa for ls --
 if command -v exa &> /dev/null; then
