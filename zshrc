@@ -78,6 +78,8 @@ export EDITOR='nvim'
 # -- use exa for ls --
 if command -v exa &> /dev/null; then
   alias ls="exa -g --color=always --group-directories-first --icons"
+else
+  echo "command exa not found, please install"
 fi
 
 # Java global JVM args
@@ -100,7 +102,7 @@ alias l="ls -l"
 alias vi="vim -C"
 
 # safer rm, trash puts files/folders into trash (macos only)
-if command -v exa &> /dev/null; then
+if command -v trash &> /dev/null; then
   alias rm=trash
 else
   echo "command trash not found, please install"
