@@ -1,4 +1,10 @@
 # -- enable bash autocompletion in zsh --
+
+# -- Load homebrew properties if present --
+if [ -f ~/.homebrew_props ]; then
+  source ~/.homebrew_props
+fi
+
 autoload -U +X bashcompinit && bashcompinit
 
 autoload -U compinit; compinit
