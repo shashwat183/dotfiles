@@ -30,6 +30,7 @@ function zvm_after_init() {
   if  [ -f ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
     source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
     bindkey '^ ' autosuggest-accept
+    bindkey '^l' forward-word
   else
     echo "zsh-autosuggestions not found, please install"
   fi
