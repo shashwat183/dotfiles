@@ -7,7 +7,7 @@ fi
 
 autoload -U +X bashcompinit && bashcompinit
 
-autoload -U compinit; compinit
+autoload -Uz compinit; compinit
 
 zstyle ':completion:*' menu select
 
@@ -76,11 +76,11 @@ fi
 # -- Set Editor to neovim --
 export EDITOR='nvim'
 
-# -- use exa for ls --
-if command -v exa &> /dev/null; then
-  alias ls="exa -g --color=always --group-directories-first --icons"
+# -- use eza for ls --
+if command -v eza &> /dev/null; then
+  alias ls="eza -g --color=always --group-directories-first --icons"
 else
-  echo "command exa not found, please install"
+  echo "command eza not found, please install"
 fi
 
 # Java global JVM args
