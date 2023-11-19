@@ -76,6 +76,11 @@ format = "[ VAULT_NAMESPACE=$env_value]($style) "
 variable = 'VAULT_NAMESPACE'
 style = 'bold green'
 
+[env_var.VAULT_TOKEN]
+format = "[ VAULT_TOKEN=<redacted>]($style) "
+variable = 'VAULT_TOKEN'
+style = 'bold green'
+
 [fill]
 symbol = ' '
 
