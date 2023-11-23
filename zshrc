@@ -101,6 +101,8 @@ alias lg="ls -l --git"
 alias la="ls -lah"
 alias l="ls -l"
 alias vi="vim -C"
+alias cat="ccat"
+alias cl="clear"
 
 # safer rm, trash puts files/folders into trash (macos only)
 if command -v trash &> /dev/null; then
