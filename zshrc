@@ -1,15 +1,20 @@
-# -- enable bash autocompletion in zsh --
-
 # -- Load homebrew properties if present --
 if [ -f ~/.homebrew_props ]; then
   source ~/.homebrew_props
 fi
 
-autoload -U +X bashcompinit && bashcompinit
-
-autoload -Uz compinit; compinit
-
+# Completion
 zstyle ':completion:*' menu select
+
+# -- enable advanced completion for zsh --
+# global completions are stored in /usr/share/zsh/<version>/functions/
+# but we can also add other directories to the fpath to load completions
+# from such as /opt/homebrew/share/zsh/site-functions where homebrew stores
+# completions
+autoload -Uz compinit && compinit
+
+# -- enable bash autocompletion in zsh --
+autoload -U +X bashcompinit && bashcompinit
 
 # --------------------------------------------------------------------------- #
 # Plugins
@@ -92,7 +97,7 @@ export PATH="$PATH:$HOME/.local/share/bob/nvim-bin"
 # --------------------------------------------------------------------------- #
 # aliases
 # --------------------------------------------------------------------------- #
-alias py='python'
+alias py='python3'
 alias ll="ls -la"
 alias zsource='source ~/.zshrc'
 alias dkr='docker'
