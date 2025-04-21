@@ -23,6 +23,7 @@
     ~/.config/lf/lfrc: config/lf/lfrc 
     ~/.config/lf/icons: config/lf/icons
     ~/.config/ideavim/ideavimrc: config/ideavim/ideavimrc
+    ~/.config/ghostty/config: config/ghostty/config
     ~/.config/starship.toml: starship.toml
     ~/.config/amethyst/amethyst.yml: amethyst.yml
     ~/.config/qutebrowser/config.py:
