@@ -9,9 +9,9 @@
 
 # layouts - Ordered list of layouts to use by layout key (default tall, wide, fullscreen, and column).
 layouts:
+  - fullscreen
   - tall
   - wide
-  - fullscreen
   - column
   # - tall-right
   # - two-pane
@@ -51,8 +51,8 @@ mod2:
 
 # Move to the next layout in the list.
 cycle-layout:
-  mod: mod2
-  key: space
+  mod: <NONE>
+  key: <NONE>
 
 # Move to the previous layout in the list.
 cycle-layout-backward:
@@ -61,13 +61,13 @@ cycle-layout-backward:
 
 # Shrink the main pane by a percentage of the screen dimension as defined by window-resize-step. Note that not all layouts respond to this command.
 shrink-main:
-  mod: mod1
-  key: h
+  mod: <NONE>
+  key: <NONE>
 
 # Expand the main pane by a percentage of the screen dimension as defined by window-resize-step. Note that not all layouts respond to this command.
 expand-main:
-  mod: mod1
-  key: l
+  mod: <NONE>
+  key: <NONE>
 
 # Increase the number of windows in the main pane. Note that not all layouts respond to this command.
 increase-main:
@@ -81,18 +81,18 @@ decrease-main:
 
 # Focus the next window in the list going counter-clockwise.
 focus-ccw:
-  mod: mod1
-  key: k
+  mod: <NONE>
+  key: <NONE>
 
 # Focus the next window in the list going clockwise.
 focus-cw:
-  mod: mod1
-  key: j
+  mod: <NONE>
+  key: <NONE>
 
 # Focus the main window in the list.
 focus-main:
-  mod: mod1
-  key: m
+  mod: <NONE>
+  key: <NONE>
 
 # Focus the next screen in the list going counter-clockwise.
 focus-screen-ccw:
@@ -126,8 +126,8 @@ swap-cw:
 
 # Swap the position of the currently focused window with the main window in the list.
 swap-main:
-  mod: mod1
-  key: enter
+  mod: <NONE>
+  key: <NONE>
 
 # Move focus to the n-th screen in the list; e.g., focus-screen-3 will move mouse focus to the 3rd screen. Note that the main window in the given screen will be focused.
 #focus-screen-n:
@@ -144,6 +144,10 @@ focus-screen-3:
   key: <NONE>
 
 focus-screen-4:
+  mod: <NONE>
+  key: <NONE>
+
+focus-screen-5:
   mod: <NONE>
   key: <NONE>
 
@@ -165,46 +169,50 @@ throw-screen-4:
   mod: <NONE>
   key: <NONE>
 
+throw-screen-5:
+  mod: <NONE>
+  key: <NONE>
+
 # Move the currently focused window to the n-th space; e.g., throw-space-3 will move the window to the 3rd space.
 throw-space-1:
-  mod: mod2
-  key: 1
+  mod: <NONE>
+  key: <NONE>
 
 throw-space-2:
-  mod: mod2
-  key: 1
+  mod: <NONE>
+  key: <NONE>
 
 throw-space-3:
-  mod: mod2
-  key: 3
+  mod: <NONE>
+  key: <NONE>
 
 throw-space-4:
-  mod: mod2
-  key: 4
+  mod: <NONE>
+  key: <NONE>
 
 throw-space-5:
-  mod: mod2
-  key: 5
+  mod: <NONE>
+  key: <NONE>
 
 throw-space-6:
-  mod: mod2
-  key: 6
+  mod: <NONE>
+  key: <NONE>
 
 throw-space-7:
-  mod: mod2
-  key: 7
+  mod: <NONE>
+  key: <NONE>
 
 throw-space-8:
-  mod: mod2
-  key: 8
+  mod: <NONE>
+  key: <NONE>
 
 throw-space-9:
-  mod: mod2
-  key: 9
+  mod: <NONE>
+  key: <NONE>
 
 throw-space-10:
-  mod: mod2
-  key: 0
+  mod: <NONE>
+  key: <NONE>
 
 # Select tall layout
 select-tall-layout:
@@ -263,8 +271,8 @@ toggle-focus-follows-mouse:
 
 # Automatically quit and reopen Amethyst.
 relaunch-amethyst:
-  mod: mod2
-  key: a
+  mod: <NONE>
+  key: <NONE>
 
 # disable screen padding on builtin display
 disable-padding-on-builtin-display: false
@@ -289,7 +297,7 @@ window-minimum-height: 0
 window-minimum-width: 0
 
 # List of bundle identifiers for applications to either be automatically floating or automatically tiled based on floating-is-blacklist (default []).
-floating: [com.apple.calculator, com.apple.systempreferences, com.logi.ghub]
+floating: [com.apple.calculator, com.apple.systempreferences, com.logi.ghub, com.raycast.macos]
 
 # Boolean flag determining behavior of the floating list. true if the applications should be floating and all others tiled. false if the applications should be tiled and all others floating (default true).
 floating-is-blacklist: true
