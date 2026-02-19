@@ -71,7 +71,7 @@ nnoremap gr :action ShowUsages<CR>
 nnoremap gi :action GotoImplementation<CR>
 nnoremap gt :action GotoTest<CR>
 nnoremap gu :action GotoSuperMethod<CR>
-" nnoremap <leader>q :action 
+nnoremap <leader>q :action 
 nnoremap <leader>lj :action GotoNextError<CR>
 nnoremap <leader>lk :action GotoPreviousError<CR>
 nnoremap <leader>vr :action IdeaVim.ReloadVimRc.reload<CR>
@@ -81,6 +81,6 @@ nnoremap <leader>c :q<CR>
 xnoremap J :action MoveLineDown<CR> xnoremap K :action MoveLineUp<CR>
 map <Leader>pf <action>(com.mituuz.fuzzier.Fuzzier)
 map <Leader>mf <action>(com.mituuz.fuzzier.FuzzyMover)
-map <Leader>gf <action>(com.mituuz.fuzzier.FuzzierVCS)
+map <Leader>f <action>(com.mituuz.fuzzier.FuzzierVCS)
 set visualbell
 set noerrorbells

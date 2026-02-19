@@ -1,13 +1,14 @@
 format = """
-$os\
 $directory\
 $hostname\
 $git_branch\
 $git_status\
 $git_state\
 $fill\
-$cmd_duration $python$golang$java$env_var $jobs$azure$aws
+$cmd_duration $env_var $jobs$azure$aws
 [ ](bold green)"""
+
+command_timeout = 100
 
 [character]
 success_symbol = '[➜](bold green)'
@@ -55,12 +56,12 @@ style = 'bold green'
 [python]
 format = '[${symbol}($version )(\($virtualenv\) )]($style)'
 style = 'bold cyan'
-symbol = ' '
+symbol = 'py '
 
 [golang]
 format = '[$symbol($version )]($style)'
 style = 'bold cyan'
-symbol = ' '
+symbol = 'go '
 
 [java]
 format = '[${symbol}(${version} )]($style)'

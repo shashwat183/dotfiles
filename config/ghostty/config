@@ -1,7 +1,8 @@
 background-blur-radius = 30
-background-opacity = 0.95
+background-opacity = 0.85
 macos-titlebar-style = hidden
 window-padding-x = 12
 window-padding-y = 25
 font-size = 15
-theme = carbonfox
+theme = dark:carbonfox,light:adwaita
+keybind = shift+enter=text:\n
