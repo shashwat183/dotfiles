@@ -1,8 +1,18 @@
 [user]
-	name = shashwat pragya
-	email = shashwat183@gmail.com
+    name = Shashwat Pragya
+    email = shashwat183@gmail.com
+
 [core]
-	autocrlf = input
-	excludesfile = /Users/shashwatpragya/.global_gitignore
+    autocrlf = input
+    excludesfile = /Users/shashwatpragya/.global_gitignore
+
 [init]
-	defaultBranch = main
+    defaultBranch = main
+
+[alias]
+    commits = log --date=relative --abbrev=8 --decorate=short --decorate-refs-exclude=refs/tags/production-* --pretty=format:'%C(auto)%h%Creset %C(green)%<(12,trunc)%cr%Creset %C(blue)%<(18,trunc)%an%Creset %C(auto)%d%Creset %s' -40
+    changes = log --no-merges --date=relative --abbrev=8 --pretty=format:'%C(auto)%h%Creset %C(green)%<(12,trunc)%cr%Creset %C(blue)%<(18,trunc)%an%Creset %s' -40
+
+# This MUST be at the end so local settings can override shared ones
+[include]
+    path = ~/.local_gitconfig

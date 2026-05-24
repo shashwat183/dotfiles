@@ -1,20 +1,23 @@
-# -- Load homebrew properties if present --
-if [ -f ~/.homebrew_props ]; then
-  source ~/.homebrew_props
-fi
+# Shared interactive shell config
 
-# Completion
+# Machine-specific completion setup that must run before compinit
+[[ -f "$HOME/.local_zshrc_completions" ]] && source "$HOME/.local_zshrc_completions"
+
+# User-installed zsh completion functions
+[[ -d "$HOME/.local/share/zsh/site-functions" ]] && fpath=("$HOME/.local/share/zsh/site-functions" $fpath)
+
+# Homebrew zsh completion functions
+[[ -d /opt/homebrew/share/zsh/site-functions ]] && fpath=(/opt/homebrew/share/zsh/site-functions $fpath)
+
+# Initialize zsh completion after all completion directories have been added to fpath
+autoload -Uz compinit
+compinit
+
+# Menu select for completions
 zstyle ':completion:*' menu select
 
-# -- enable advanced completion for zsh --
-# global completions are stored in /usr/share/zsh/<version>/functions/
-# but we can also add other directories to the fpath to load completions
-# from such as /opt/homebrew/share/zsh/site-functions where homebrew stores
-# completions
-autoload -Uz compinit && compinit
-
-# -- enable bash autocompletion in zsh --
-autoload -U +X bashcompinit && bashcompinit
+# Disable terminal bell for interactive shells
+unsetopt BEEP
 
 # --------------------------------------------------------------------------- #
 # Plugins
@@ -78,58 +81,30 @@ else
   echo "starship prompt not found, please install"
 fi
 
-# -- Set Editor to neovim --
-export EDITOR='nvim'
+# --------------------------------------------------------------------------- #
+# aliases
+# --------------------------------------------------------------------------- #
 
-# -- use eza for ls --
+# Prefer eza for ls if available
 if command -v eza &> /dev/null; then
   alias ls="eza -g --color=always --group-directories-first --icons"
 else
   echo "command eza not found, please install"
 fi
 
-# Java global JVM args
-export JDTLS_JVM_ARGS="-javaagent:$HOME/.local/share/nvim/mason/packages/jdtls/lombok.jar"
-
-# Bob(neovim version manager) bin path
-export PATH="$PATH:$HOME/.local/share/bob/nvim-bin"
-
-# --------------------------------------------------------------------------- #
-# aliases
-# --------------------------------------------------------------------------- #
-alias py='python3'
-alias ll="ls -la"
-alias zsource='source ~/.zshrc'
-alias dkr='docker'
-# some ls aliases
-alias lg="ls -l --git"
-alias la="ls -lah"
-alias l="ls -l"
-alias vi="vim -C"
-alias cl="clear"
-
+# Prefer ccat for cat if available
 if command -v ccat &> /dev/null; then
   alias cat="ccat"
 else
   echo "command ccat not found, please install"
 fi
 
-# safer rm, trash puts files/folders into trash (macos only)
+# Use trash instead of rm on macOS if available
 if command -v trash &> /dev/null; then
   alias rm=trash
 else
   echo "command trash not found, please install"
 fi
 
-# take = create a new dir and cd into it.
-function take {
-  mkdir -p $1
-  cd $1
-}
-
-unsetopt BEEP
-
-# -- Support for Local zshrc --
-if [ -f ~/.local_zshrc ]; then
-  source ~/.local_zshrc
-fi
+# Machine-specific interactive shell config
+[[ -f "$HOME/.local_zshrc" ]] && source "$HOME/.local_zshrc"
