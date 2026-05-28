@@ -5,5 +5,4 @@ window-padding-x = 12
 window-padding-y = 25
 font-size = 15
 theme = dark:carbonfox,light:adwaita
-keybind = shift+enter=text:\n
 desktop-notifications = true
