@@ -58,7 +58,6 @@
       if: '[[ "$(uname)" == "Linux" ]]'
 
 - create:
-    - ~/downloads
     - ~/.vim/undo-history
 
 - shell:
